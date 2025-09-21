@@ -1,0 +1,8 @@
+Django
+djangorestframework
+python-decouple
+django-filter
+djangorestframework-simplejwt
+requests
+drf-spectacular
+

@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Django
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+# Virtualenv
+premium-venv/
+venv/
+ENV/
+.env
+
+# VSCode
+.vscode/
+
+# Static files
+staticfiles/
+
+# Migrations
+premiums/migrations/*.pyc
+premiums/migrations/*.pyo
+premiums/migrations/*.pyd
+premiums/migrations/__pycache__/
+
+# Postman
+insurance.postman_collection.json
+
