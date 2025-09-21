@@ -1,0 +1,2372 @@
+{
+	"info": {
+		"_postman_id": "eba67f58-deb9-4920-a0a7-b6e4e3267cd3",
+		"name": "insurance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "46430376"
+	},
+	"item": [
+		{
+			"name": "policies",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4NDMzMDIwLCJpYXQiOjE3NTg0MzIxMjAsImp0aSI6IjFiOTM2YWM5Y2RiNTQ5NWZhYmJiYzY1NzEzOTE5ZTljIiwidXNlcl9pZCI6IjIifQ.sl0Dk4kGauiDFh5rmtf7s9RhiGVXcTIiqM43f0uVkJA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer_id\": \"8f79bcf4-d79f-44f6-8e55-ca2f8e5fa529\",\r\n  \"product_code\": \"LIFE001\",\r\n  \"coverage_amount\": \"1000000.00\",\r\n  \"premium_amount\": \"5000.00\",\r\n  \"premium_frequency\": \"annual\",\r\n  \"start_date\": \"2024-01-01\",\r\n  \"end_date\": \"2025-01-01\",\r\n  \"agent_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8001/policies/"
+					},
+					"response": []
+				},
+				{
+					"name": "get by customer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4MzkxMzM4LCJpYXQiOjE3NTgzOTA0MzgsImp0aSI6ImRlZDI3MmU2M2E1MDQ0NTliMjU2NTg5ZjBhNjEwMTM0IiwidXNlcl9pZCI6IjIifQ.VDVAb7TfswJ-e5iwfmB2qnurVXNjXxC5qDlBHuc8Vyk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8001/policies/by-customer/2f3a84ac-1e29-4c33-bb98-7c11c79c8f20"
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4MzkxMzM4LCJpYXQiOjE3NTgzOTA0MzgsImp0aSI6ImRlZDI3MmU2M2E1MDQ0NTliMjU2NTg5ZjBhNjEwMTM0IiwidXNlcl9pZCI6IjIifQ.VDVAb7TfswJ-e5iwfmB2qnurVXNjXxC5qDlBHuc8Vyk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8001/policies/8c4de0dc-fea7-4d3b-8f84-2fa15216a4cc"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4MzkyMjYxLCJpYXQiOjE3NTgzOTEzNjEsImp0aSI6ImE3ZDM3MzA2YjJiZTRkYmY4ZDY4NDVlZmEzMmRkNTEyIiwidXNlcl9pZCI6IjIifQ.KVAfpzUAzx_lrwOWsLPalu5nZGNCc60Y59eXbM9kLww",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/policies/?end_date_before=2020-01-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"policies",
+								""
+							],
+							"query": [
+								{
+									"key": "start_date_after",
+									"value": "2025-01-01",
+									"disabled": true
+								},
+								{
+									"key": "end_date_before",
+									"value": "2020-01-01"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment-methods",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "payment methods retrieve",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "http://127.0.0.1:8002/payment-methods/f18e5c9b-fec9-4abd-8d17-845a955a58e7"
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/payment-methods/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"payment-methods",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"customer\": \"43934073-e962-82ba-5969-2a567d359d96\",\n  \"id\": \"6047cdc5-8a75-46df-3943-6eadc0f0158e\",\n  \"masked_details\": \"string\",\n  \"type\": \"card\",\n  \"verified\": true,\n  \"last_used_at\": \"2005-10-17T15:42:15.143Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "payment methods update",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"customer\": \"0e849d3c-96c0-b9c7-48a7-d6c825c2d401\",\n  \"masked_details\": \"string\",\n  \"type\": \"bank\",\n  \"verified\": true,\n  \"last_used_at\": \"1951-03-23T15:31:20.688Z\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment-methods/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment-methods",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this payment method."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"customer\": \"0e849d3c-96c0-b9c7-48a7-d6c825c2d401\",\n  \"masked_details\": \"string\",\n  \"type\": \"bank\",\n  \"verified\": true,\n  \"last_used_at\": \"1951-03-23T15:31:20.688Z\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/payment-methods/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"payment-methods",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"customer\": \"43934073-e962-82ba-5969-2a567d359d96\",\n  \"id\": \"6047cdc5-8a75-46df-3943-6eadc0f0158e\",\n  \"masked_details\": \"string\",\n  \"type\": \"card\",\n  \"verified\": true,\n  \"last_used_at\": \"2005-10-17T15:42:15.143Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "payment methods partial update",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": \"upi\",\n  \"masked_details\": \"string\",\n  \"verified\": true,\n  \"last_used_at\": \"1960-09-01T22:24:43.542Z\",\n  \"customer\": \"d2c30b33-ab5e-e4ae-2512-b9fb6a40a857\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/payment-methods/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment-methods",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this payment method."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"type\": \"upi\",\n  \"masked_details\": \"string\",\n  \"verified\": true,\n  \"last_used_at\": \"1960-09-01T22:24:43.542Z\",\n  \"customer\": \"d2c30b33-ab5e-e4ae-2512-b9fb6a40a857\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/payment-methods/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"payment-methods",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"customer\": \"43934073-e962-82ba-5969-2a567d359d96\",\n  \"id\": \"6047cdc5-8a75-46df-3943-6eadc0f0158e\",\n  \"masked_details\": \"string\",\n  \"type\": \"card\",\n  \"verified\": true,\n  \"last_used_at\": \"2005-10-17T15:42:15.143Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "payment methods destroy",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/payment-methods/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payment-methods",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this payment method."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No response body",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/payment-methods/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"payment-methods",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "payment methods list",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"key": "sessionid",
+								"value": "{{apiKey}}",
+								"in": "header"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "http://127.0.0.1:8002/payment-methods/"
+					},
+					"response": [
+						{
+							"name": "Untitled Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "sessionid",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": "{{baseUrl}}/payment-methods/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"customer\": \"4f12bbf9-7be7-52e8-c2fe-8a4bfd4014f2\",\n    \"id\": \"ac7c5430-8fde-039b-e6ee-7e9315c9e7cf\",\n    \"masked_details\": \"string\",\n    \"type\": \"card\",\n    \"verified\": false,\n    \"last_used_at\": \"1972-08-26T05:35:27.428Z\"\n  },\n  {\n    \"customer\": \"0ea57bb4-d1ea-5c67-fb04-c83a20c614bd\",\n    \"id\": \"96b4ee8d-0ff7-0999-0d85-dcd8014ea565\",\n    \"masked_details\": \"string\",\n    \"type\": \"card\",\n    \"verified\": true,\n    \"last_used_at\": \"1966-07-08T18:03:56.000Z\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "payment methods create",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"key": "sessionid",
+								"value": "{{apiKey}}",
+								"in": "header"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4Mzk4NTc2LCJpYXQiOjE3NTgzOTc2NzYsImp0aSI6IjI1Y2RmM2Y0YTkxODRjM2Q4NDZmNTgzZGM5MDM3MDljIiwidXNlcl9pZCI6IjIifQ.WmPRWZHLW_SVmr_KLwR0vXRU2khJbsofurTgIyJzHHY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customer\": \"8f79bcf4-d79f-44f6-8e55-ca2f8e5fa529\",\n  \"masked_details\": \"string\",\n  \"type\": \"bank\",\n  \"verified\": true,\n  \"last_used_at\": \"1951-03-23T15:31:20.688Z\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8002/payment-methods/"
+					},
+					"response": [
+						{
+							"name": "Untitled Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "sessionid",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"customer\": \"0e849d3c-96c0-b9c7-48a7-d6c825c2d401\",\n  \"masked_details\": \"string\",\n  \"type\": \"bank\",\n  \"verified\": true,\n  \"last_used_at\": \"1951-03-23T15:31:20.688Z\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/payment-methods/"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"customer\": \"43934073-e962-82ba-5969-2a567d359d96\",\n  \"id\": \"6047cdc5-8a75-46df-3943-6eadc0f0158e\",\n  \"masked_details\": \"string\",\n  \"type\": \"card\",\n  \"verified\": true,\n  \"last_used_at\": \"2005-10-17T15:42:15.143Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "addresses",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "addresses retrieve",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/addresses/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"addresses",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this address."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/addresses/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"addresses",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"city\": \"string\",\n  \"country\": \"string\",\n  \"customer\": \"dbc9933e-d905-2799-beba-8d62a9a9c042\",\n  \"id\": \"5e749fe2-3388-3b8c-c9c6-a75771ad9f7b\",\n  \"line1\": \"string\",\n  \"pincode\": \"string\",\n  \"state\": \"string\",\n  \"type\": \"correspondence\",\n  \"line2\": \"string\"\n}"
+								}
+							]
+						},
+						{
+							"name": "addresses update",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"city\": \"string\",\n  \"country\": \"string\",\n  \"customer\": \"5c35f153-f9c1-0d9f-c5d2-46121a014279\",\n  \"line1\": \"string\",\n  \"pincode\": \"string\",\n  \"state\": \"string\",\n  \"type\": \"correspondence\",\n  \"line2\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/addresses/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"addresses",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this address."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"city\": \"string\",\n  \"country\": \"string\",\n  \"customer\": \"5c35f153-f9c1-0d9f-c5d2-46121a014279\",\n  \"line1\": \"string\",\n  \"pincode\": \"string\",\n  \"state\": \"string\",\n  \"type\": \"correspondence\",\n  \"line2\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/addresses/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"addresses",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"city\": \"string\",\n  \"country\": \"string\",\n  \"customer\": \"dbc9933e-d905-2799-beba-8d62a9a9c042\",\n  \"id\": \"5e749fe2-3388-3b8c-c9c6-a75771ad9f7b\",\n  \"line1\": \"string\",\n  \"pincode\": \"string\",\n  \"state\": \"string\",\n  \"type\": \"correspondence\",\n  \"line2\": \"string\"\n}"
+								}
+							]
+						},
+						{
+							"name": "addresses partial update",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": \"correspondence\",\n  \"line1\": \"string\",\n  \"line2\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"pincode\": \"string\",\n  \"country\": \"string\",\n  \"customer\": \"654360bc-afa5-a459-c784-64ef5b42fd4e\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/addresses/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"addresses",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this address."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"type\": \"correspondence\",\n  \"line1\": \"string\",\n  \"line2\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"pincode\": \"string\",\n  \"country\": \"string\",\n  \"customer\": \"654360bc-afa5-a459-c784-64ef5b42fd4e\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/addresses/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"addresses",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"city\": \"string\",\n  \"country\": \"string\",\n  \"customer\": \"dbc9933e-d905-2799-beba-8d62a9a9c042\",\n  \"id\": \"5e749fe2-3388-3b8c-c9c6-a75771ad9f7b\",\n  \"line1\": \"string\",\n  \"pincode\": \"string\",\n  \"state\": \"string\",\n  \"type\": \"correspondence\",\n  \"line2\": \"string\"\n}"
+								}
+							]
+						},
+						{
+							"name": "addresses destroy",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/addresses/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"addresses",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this address."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No response body",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/addresses/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"addresses",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "addresses list",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"key": "sessionid",
+								"value": "{{apiKey}}",
+								"in": "header"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/addresses/"
+					},
+					"response": [
+						{
+							"name": "Untitled Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "sessionid",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": "{{baseUrl}}/addresses/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"customer\": \"774953a3-bca7-75ae-06b3-ceb2cd1f25b1\",\n    \"id\": \"cee245b7-8898-0c53-9065-8ae44aa9234f\",\n    \"line1\": \"string\",\n    \"pincode\": \"string\",\n    \"state\": \"string\",\n    \"type\": \"correspondence\",\n    \"line2\": \"string\"\n  },\n  {\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"customer\": \"1d8a65f3-6b22-ba26-0c59-bf1f86f97537\",\n    \"id\": \"30d6a9b6-0bc5-7e97-d97c-4e36b7904c57\",\n    \"line1\": \"string\",\n    \"pincode\": \"string\",\n    \"state\": \"string\",\n    \"type\": \"correspondence\",\n    \"line2\": \"string\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "addresses create",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"key": "sessionid",
+								"value": "{{apiKey}}",
+								"in": "header"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"city\": \"string\",\n  \"country\": \"string\",\n  \"customer\": \"5c35f153-f9c1-0d9f-c5d2-46121a014279\",\n  \"line1\": \"string\",\n  \"pincode\": \"string\",\n  \"state\": \"string\",\n  \"type\": \"correspondence\",\n  \"line2\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/addresses/"
+					},
+					"response": [
+						{
+							"name": "Untitled Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "sessionid",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"city\": \"string\",\n  \"country\": \"string\",\n  \"customer\": \"5c35f153-f9c1-0d9f-c5d2-46121a014279\",\n  \"line1\": \"string\",\n  \"pincode\": \"string\",\n  \"state\": \"string\",\n  \"type\": \"correspondence\",\n  \"line2\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/addresses/"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"city\": \"string\",\n  \"country\": \"string\",\n  \"customer\": \"dbc9933e-d905-2799-beba-8d62a9a9c042\",\n  \"id\": \"5e749fe2-3388-3b8c-c9c6-a75771ad9f7b\",\n  \"line1\": \"string\",\n  \"pincode\": \"string\",\n  \"state\": \"string\",\n  \"type\": \"correspondence\",\n  \"line2\": \"string\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "customers retrieve",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "http://127.0.0.1:8002/customers/8f79bcf4-d79f-44f6-8e55-ca2f8e5fa529/"
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"created_at\": \"1946-12-26T10:40:27.672Z\",\n  \"dob\": \"2024-02-01\",\n  \"first_name\": \"string\",\n  \"gender\": \"string\",\n  \"id\": \"2d742213-311c-66ab-ea1d-b2855948dd76\",\n  \"income_bracket\": \"string\",\n  \"last_name\": \"string\",\n  \"occupation\": \"string\",\n  \"preferred_contact_method\": \"email\",\n  \"primary_email\": \"Qwm502pcqf@mOIXErclcHCIZSfebxSlUyBcyc.ozw\",\n  \"primary_phone\": \"string\",\n  \"risk_score\": \"\",\n  \"updated_at\": \"1957-09-10T20:33:22.838Z\",\n  \"kyc_status\": \"verified\"\n}"
+								}
+							]
+						},
+						{
+							"name": "customers update",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"dob\": \"1949-10-03\",\n  \"first_name\": \"string\",\n  \"gender\": \"string\",\n  \"income_bracket\": \"string\",\n  \"last_name\": \"string\",\n  \"occupation\": \"string\",\n  \"preferred_contact_method\": \"phone\",\n  \"primary_email\": \"xdT5@YKnmDUorNGIihGfWIiDnlSZPMFAbNokM.ih\",\n  \"primary_phone\": \"string\",\n  \"risk_score\": \"94\",\n  \"kyc_status\": \"pending\",\n  \"created_at\": 5877.356276365662,\n  \"id\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this customer."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"dob\": \"1949-10-03\",\n  \"first_name\": \"string\",\n  \"gender\": \"string\",\n  \"income_bracket\": \"string\",\n  \"last_name\": \"string\",\n  \"occupation\": \"string\",\n  \"preferred_contact_method\": \"phone\",\n  \"primary_email\": \"xdT5@YKnmDUorNGIihGfWIiDnlSZPMFAbNokM.ih\",\n  \"primary_phone\": \"string\",\n  \"risk_score\": \"94\",\n  \"kyc_status\": \"pending\",\n  \"created_at\": 5877.356276365662,\n  \"id\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"created_at\": \"1946-12-26T10:40:27.672Z\",\n  \"dob\": \"2024-02-01\",\n  \"first_name\": \"string\",\n  \"gender\": \"string\",\n  \"id\": \"2d742213-311c-66ab-ea1d-b2855948dd76\",\n  \"income_bracket\": \"string\",\n  \"last_name\": \"string\",\n  \"occupation\": \"string\",\n  \"preferred_contact_method\": \"email\",\n  \"primary_email\": \"Qwm502pcqf@mOIXErclcHCIZSfebxSlUyBcyc.ozw\",\n  \"primary_phone\": \"string\",\n  \"risk_score\": \"\",\n  \"updated_at\": \"1957-09-10T20:33:22.838Z\",\n  \"kyc_status\": \"verified\"\n}"
+								}
+							]
+						},
+						{
+							"name": "customers partial update",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"dob\": \"1997-09-20\",\n  \"gender\": \"string\",\n  \"primary_email\": \"2jj@x.dw\",\n  \"primary_phone\": \"string\",\n  \"preferred_contact_method\": \"phone\",\n  \"occupation\": \"string\",\n  \"income_bracket\": \"string\",\n  \"risk_score\": \"-30.\",\n  \"kyc_status\": \"pending\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this customer."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"dob\": \"1997-09-20\",\n  \"gender\": \"string\",\n  \"primary_email\": \"2jj@x.dw\",\n  \"primary_phone\": \"string\",\n  \"preferred_contact_method\": \"phone\",\n  \"occupation\": \"string\",\n  \"income_bracket\": \"string\",\n  \"risk_score\": \"-30.\",\n  \"kyc_status\": \"pending\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"created_at\": \"1946-12-26T10:40:27.672Z\",\n  \"dob\": \"2024-02-01\",\n  \"first_name\": \"string\",\n  \"gender\": \"string\",\n  \"id\": \"2d742213-311c-66ab-ea1d-b2855948dd76\",\n  \"income_bracket\": \"string\",\n  \"last_name\": \"string\",\n  \"occupation\": \"string\",\n  \"preferred_contact_method\": \"email\",\n  \"primary_email\": \"Qwm502pcqf@mOIXErclcHCIZSfebxSlUyBcyc.ozw\",\n  \"primary_phone\": \"string\",\n  \"risk_score\": \"\",\n  \"updated_at\": \"1957-09-10T20:33:22.838Z\",\n  \"kyc_status\": \"verified\"\n}"
+								}
+							]
+						},
+						{
+							"name": "customers destroy",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/customers/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this customer."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No response body",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "customers list",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"key": "sessionid",
+								"value": "{{apiKey}}",
+								"in": "header"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8002/customers/?kyc_status=pending",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8002",
+							"path": [
+								"customers",
+								""
+							],
+							"query": [
+								{
+									"key": "income_bracket",
+									"value": "string",
+									"disabled": true
+								},
+								{
+									"key": "kyc_status",
+									"value": "pending",
+									"description": "* `pending` - Pending\n* `verified` - Verified\n* `rejected` - Rejected"
+								},
+								{
+									"key": "risk_score",
+									"value": "94",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "string",
+									"description": "A search term.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "sessionid",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers/?income_bracket=string&kyc_status=pending&risk_score=6290.431093908304&search=string",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										""
+									],
+									"query": [
+										{
+											"key": "income_bracket",
+											"value": "string"
+										},
+										{
+											"key": "kyc_status",
+											"value": "pending",
+											"description": "* `pending` - Pending\n* `verified` - Verified\n* `rejected` - Rejected"
+										},
+										{
+											"key": "risk_score",
+											"value": "6290.431093908304"
+										},
+										{
+											"key": "search",
+											"value": "string",
+											"description": "A search term."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"created_at\": \"2013-09-17T16:24:50.407Z\",\n    \"dob\": \"1967-12-16\",\n    \"first_name\": \"string\",\n    \"gender\": \"string\",\n    \"id\": \"c602121a-cda6-c8d6-d7ab-58151ad6172d\",\n    \"income_bracket\": \"string\",\n    \"last_name\": \"string\",\n    \"occupation\": \"string\",\n    \"preferred_contact_method\": \"phone\",\n    \"primary_email\": \"YtdGq8Ancq70@IGXvZdHNjIVHcFM.ttz\",\n    \"primary_phone\": \"string\",\n    \"risk_score\": \"-.\",\n    \"updated_at\": \"2019-09-09T08:17:24.259Z\",\n    \"kyc_status\": \"pending\"\n  },\n  {\n    \"created_at\": \"2019-10-22T00:11:10.151Z\",\n    \"dob\": \"1980-12-13\",\n    \"first_name\": \"string\",\n    \"gender\": \"string\",\n    \"id\": \"bb54e0e1-452a-9757-d1d1-02500d10a41c\",\n    \"income_bracket\": \"string\",\n    \"last_name\": \"string\",\n    \"occupation\": \"string\",\n    \"preferred_contact_method\": \"phone\",\n    \"primary_email\": \"xMP-C@YlyuYhblzkLxQyxKyncJe.zqlb\",\n    \"primary_phone\": \"string\",\n    \"risk_score\": \"-9\",\n    \"updated_at\": \"1948-11-02T23:08:27.093Z\",\n    \"kyc_status\": \"pending\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "customers create",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"key": "sessionid",
+								"value": "{{apiKey}}",
+								"in": "header"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dob\": \"1949-10-03\",\n  \"first_name\": \"string\",\n  \"gender\": \"string\",\n  \"income_bracket\": \"string\",\n  \"last_name\": \"string\",\n  \"occupation\": \"string\",\n  \"preferred_contact_method\": \"phone\",\n  \"primary_email\": \"xdT5@YKnmDUorNGIihGfWIiDnlSZPMFAbNokM.ih\",\n  \"primary_phone\": \"string\",\n  \"risk_score\": \"94\",\n  \"kyc_status\": \"pending\",\n  \"created_at\": 5877.356276365662,\n  \"id\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/customers/"
+					},
+					"response": [
+						{
+							"name": "Untitled Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "sessionid",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"dob\": \"1949-10-03\",\n  \"first_name\": \"string\",\n  \"gender\": \"string\",\n  \"income_bracket\": \"string\",\n  \"last_name\": \"string\",\n  \"occupation\": \"string\",\n  \"preferred_contact_method\": \"phone\",\n  \"primary_email\": \"xdT5@YKnmDUorNGIihGfWIiDnlSZPMFAbNokM.ih\",\n  \"primary_phone\": \"string\",\n  \"risk_score\": \"94\",\n  \"kyc_status\": \"pending\",\n  \"created_at\": 5877.356276365662,\n  \"id\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/customers/"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"created_at\": \"1946-12-26T10:40:27.672Z\",\n  \"dob\": \"2024-02-01\",\n  \"first_name\": \"string\",\n  \"gender\": \"string\",\n  \"id\": \"2d742213-311c-66ab-ea1d-b2855948dd76\",\n  \"income_bracket\": \"string\",\n  \"last_name\": \"string\",\n  \"occupation\": \"string\",\n  \"preferred_contact_method\": \"email\",\n  \"primary_email\": \"Qwm502pcqf@mOIXErclcHCIZSfebxSlUyBcyc.ozw\",\n  \"primary_phone\": \"string\",\n  \"risk_score\": \"\",\n  \"updated_at\": \"1957-09-10T20:33:22.838Z\",\n  \"kyc_status\": \"verified\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "kyc-documents",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "kyc documents retrieve",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "http://127.0.0.1:8002/kyc-documents/039a15cd-df1d-4f0d-b5f1-5ec543de5fb4"
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/kyc-documents/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"kyc-documents",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"customer\": \"7e47cd87-a8e0-ab0c-ff46-987947a1f532\",\n  \"doc_type\": \"passport\",\n  \"id\": \"40b24ec5-9d43-f66f-7c67-2dc462c09bea\",\n  \"storage_key\": \"string\",\n  \"uploaded_at\": \"2000-03-12T03:59:31.346Z\",\n  \"verified_at\": \"2024-04-02T14:46:41.666Z\",\n  \"status\": \"pending\",\n  \"verifier_id\": \"ee32d9c1-9db2-4fe3-8c30-4407de03fff1\"\n}"
+								}
+							]
+						},
+						{
+							"name": "kyc documents update",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"customer\": \"e39952a0-718d-5b71-7979-0182391e1a3a\",\n  \"doc_type\": \"aadhaar\",\n  \"storage_key\": \"string\",\n  \"status\": \"verified\",\n  \"verifier_id\": \"7f9e7fd6-7fa6-279c-5534-13212034a1a3\",\n  \"id\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/kyc-documents/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"kyc-documents",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this kyc document."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"customer\": \"e39952a0-718d-5b71-7979-0182391e1a3a\",\n  \"doc_type\": \"aadhaar\",\n  \"storage_key\": \"string\",\n  \"status\": \"verified\",\n  \"verifier_id\": \"7f9e7fd6-7fa6-279c-5534-13212034a1a3\",\n  \"id\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/kyc-documents/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"kyc-documents",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"customer\": \"7e47cd87-a8e0-ab0c-ff46-987947a1f532\",\n  \"doc_type\": \"passport\",\n  \"id\": \"40b24ec5-9d43-f66f-7c67-2dc462c09bea\",\n  \"storage_key\": \"string\",\n  \"uploaded_at\": \"2000-03-12T03:59:31.346Z\",\n  \"verified_at\": \"2024-04-02T14:46:41.666Z\",\n  \"status\": \"pending\",\n  \"verifier_id\": \"ee32d9c1-9db2-4fe3-8c30-4407de03fff1\"\n}"
+								}
+							]
+						},
+						{
+							"name": "kyc documents partial update",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"doc_type\": \"pan\",\n  \"storage_key\": \"string\",\n  \"status\": \"pending\",\n  \"verifier_id\": \"053be84b-606f-1bd9-b2a9-2069023f373a\",\n  \"customer\": \"86736e55-d8ab-73b9-9e33-8ea7284b792a\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/kyc-documents/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"kyc-documents",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this kyc document."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Response",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"doc_type\": \"pan\",\n  \"storage_key\": \"string\",\n  \"status\": \"pending\",\n  \"verifier_id\": \"053be84b-606f-1bd9-b2a9-2069023f373a\",\n  \"customer\": \"86736e55-d8ab-73b9-9e33-8ea7284b792a\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/kyc-documents/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"kyc-documents",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"customer\": \"7e47cd87-a8e0-ab0c-ff46-987947a1f532\",\n  \"doc_type\": \"passport\",\n  \"id\": \"40b24ec5-9d43-f66f-7c67-2dc462c09bea\",\n  \"storage_key\": \"string\",\n  \"uploaded_at\": \"2000-03-12T03:59:31.346Z\",\n  \"verified_at\": \"2024-04-02T14:46:41.666Z\",\n  \"status\": \"pending\",\n  \"verifier_id\": \"ee32d9c1-9db2-4fe3-8c30-4407de03fff1\"\n}"
+								}
+							]
+						},
+						{
+							"name": "kyc documents destroy",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": {
+										"key": "sessionid",
+										"value": "{{apiKey}}",
+										"in": "header"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/kyc-documents/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"kyc-documents",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "97cad483-ed83-2c71-f37b-46b8087ebd72",
+											"description": "(Required) A UUID string identifying this kyc document."
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No response body",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "sessionid",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/kyc-documents/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"kyc-documents",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "kyc documents list",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"key": "sessionid",
+								"value": "{{apiKey}}",
+								"in": "header"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "http://127.0.0.1:8002/kyc-documents/"
+					},
+					"response": [
+						{
+							"name": "Untitled Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "sessionid",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"url": "{{baseUrl}}/kyc-documents/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"customer\": \"a136b0a6-5722-79a5-8cb3-2984d577a9b0\",\n    \"doc_type\": \"pan\",\n    \"id\": \"fb890e75-06b2-7d51-b517-8107c88aa7c2\",\n    \"storage_key\": \"string\",\n    \"uploaded_at\": \"1967-04-20T02:41:57.646Z\",\n    \"verified_at\": \"2017-10-28T07:48:53.072Z\",\n    \"status\": \"rejected\",\n    \"verifier_id\": \"0615e03d-d8fd-d647-4dfe-819e763b8f67\"\n  },\n  {\n    \"customer\": \"8e48df97-1a7b-c19b-071a-e15f2ca4f7d9\",\n    \"doc_type\": \"pan\",\n    \"id\": \"e57036ac-6375-566a-2df7-4a7d8500305a\",\n    \"storage_key\": \"string\",\n    \"uploaded_at\": \"1979-02-03T15:14:35.176Z\",\n    \"verified_at\": \"1978-12-03T18:44:46.057Z\",\n    \"status\": \"rejected\",\n    \"verifier_id\": \"d5e83b3a-8950-9e57-75d7-c868b5a7f1ad\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "kyc documents create",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": {
+								"key": "sessionid",
+								"value": "{{apiKey}}",
+								"in": "header"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4Mzk4NTc2LCJpYXQiOjE3NTgzOTc2NzYsImp0aSI6IjI1Y2RmM2Y0YTkxODRjM2Q4NDZmNTgzZGM5MDM3MDljIiwidXNlcl9pZCI6IjIifQ.WmPRWZHLW_SVmr_KLwR0vXRU2khJbsofurTgIyJzHHY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customer\": \"8f79bcf4-d79f-44f6-8e55-ca2f8e5fa529\",\n  \"doc_type\": \"aadhaar\",\n  \"storage_key\": \"string\",\n  \"status\": \"verified\",\n  \"verifier_id\": \"7f9e7fd6-7fa6-279c-5534-13212034a1a3\",\n  \"id\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8002/kyc-documents/"
+					},
+					"response": [
+						{
+							"name": "Untitled Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "sessionid",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"customer\": \"e39952a0-718d-5b71-7979-0182391e1a3a\",\n  \"doc_type\": \"aadhaar\",\n  \"storage_key\": \"string\",\n  \"status\": \"verified\",\n  \"verifier_id\": \"7f9e7fd6-7fa6-279c-5534-13212034a1a3\",\n  \"id\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/kyc-documents/"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"customer\": \"7e47cd87-a8e0-ab0c-ff46-987947a1f532\",\n  \"doc_type\": \"passport\",\n  \"id\": \"40b24ec5-9d43-f66f-7c67-2dc462c09bea\",\n  \"storage_key\": \"string\",\n  \"uploaded_at\": \"2000-03-12T03:59:31.346Z\",\n  \"verified_at\": \"2024-04-02T14:46:41.666Z\",\n  \"status\": \"pending\",\n  \"verifier_id\": \"ee32d9c1-9db2-4fe3-8c30-4407de03fff1\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"alice\",\r\n  \"password\": \"1234\",\r\n  \"email\": \"alice@example.com\",\r\n  \"first_name\": \"\",\r\n  \"last_name\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/auth/register/"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"alice\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/auth/login/"
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4MzU1MTE2LCJpYXQiOjE3NTgzNTQyMTYsImp0aSI6Ijg5Mjg2NmMxNzM2ZjRmY2NiNTE0YmI2OGYwNTExMmMyIiwidXNlcl9pZCI6IjIiLCJ1c2VybmFtZSI6ImFsaWNlIn0.CicTzj7e-77C_YtdXlkdAZJ5Kn_b7pkRTRp1gbrGtog\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/auth/verify/"
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1ODk1OTAxNiwiaWF0IjoxNzU4MzU0MjE2LCJqdGkiOiIyNWUxMTQwYjZjNWY0MTU1YmJmYzU5MjUzNmJmODkwZiIsInVzZXJfaWQiOiIyIiwidXNlcm5hbWUiOiJhbGljZSJ9.9jFtFK2UbO0HDBmHrX23TCiSX587kdpANWc0dg30qn8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/auth/refresh/"
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"alice\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/auth/user/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

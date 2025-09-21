@@ -31,6 +31,4 @@ premiums/migrations/*.pyo
 premiums/migrations/*.pyd
 premiums/migrations/__pycache__/
 
-# Postman
-insurance.postman_collection.json
 
